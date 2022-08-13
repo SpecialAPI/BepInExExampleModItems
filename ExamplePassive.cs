@@ -50,10 +50,9 @@ namespace Mod
             Tools.Print($"Player picked up {DisplayName}");
         }
 
-        public override DebrisObject Drop(PlayerController player)
+        public override void DisableEffect(PlayerController player)
         {
-            Tools.Print($"Player dropped {DisplayName}");
-            return base.Drop(player);
+            Tools.Print($"Player dropped or got rid of {DisplayName}");
         }
     }
 }
