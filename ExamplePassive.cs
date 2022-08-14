@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using ItemAPI;
+using Alexandria.ItemAPI;
 
 namespace Mod
 {
@@ -47,12 +47,12 @@ namespace Mod
         public override void Pickup(PlayerController player)
         {
             base.Pickup(player);
-            Tools.Print($"Player picked up {DisplayName}");
+            Module.Log($"Player picked up {DisplayName}");
         }
 
         public override void DisableEffect(PlayerController player)
         {
-            Tools.Print($"Player dropped or got rid of {DisplayName}");
+            Module.Log($"Player dropped or got rid of {DisplayName}");
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BepInEx;
-using ItemAPI;
+using Alexandria;
+using Alexandria.ItemAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,8 @@ using UnityEngine;
 
 namespace Mod
 {
-    [BepInDependency("etgmodding.etg.mtgapi")]
+    [BepInDependency(Alexandria.Alexandria.GUID)] // this mod depends on the Alexandria API: https://enter-the-gungeon.thunderstore.io/package/Alexandria/Alexandria/
+    [BepInDependency(ETGModMainBehaviour.GUID)]
     [BepInPlugin(GUID, NAME, VERSION)]
     public class Module : BaseUnityPlugin
     {
@@ -24,7 +26,6 @@ namespace Mod
 
         public void GMStart(GameManager g)
         {
-            ItemBuilder.Init();
             ExamplePassive.Register();
             Log($"{NAME} v{VERSION} started successfully.", TEXT_COLOR);
         }
