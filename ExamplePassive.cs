@@ -47,12 +47,12 @@ namespace Mod
         public override void Pickup(PlayerController player)
         {
             base.Pickup(player);
-            Module.Log($"Player picked up {DisplayName}");
+            Plugin.Log($"Player picked up {DisplayName}");
         }
 
         public override void DisableEffect(PlayerController player)
         {
-            Module.Log($"Player dropped or got rid of {DisplayName}");
+            Plugin.Log($"Player dropped or got rid of {DisplayName}");
         }
     }
 }
